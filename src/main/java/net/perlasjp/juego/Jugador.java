@@ -1,5 +1,5 @@
 package net.perlasjp.juego;
 
-Public Class Jugador{
+public class Jugador {
     
 }
