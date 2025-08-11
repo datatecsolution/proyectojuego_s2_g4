@@ -1,27 +1,28 @@
 package net.perlasjp.juego;
 
 public class Jugador {
-private String nombre;
+    private String nombre;
     private int salud;
     private int fuerza;
 
-    public int atacar(){
-       return 0;
+    public int atacar() {
+        return fuerza;
     }
-public void recibir(){
+
+    public void recibir() {
+
+    }
+
+    public void recibirDanio(int cantidad) {
+        salud = salud - cantidad;
+        if (salud < 0)
+            salud = 0;
+
+    }
+
+    public boolean estaVivo() {
+        return salud > 0;
+
+    }
 
 }
-
-public void recibirDanio(danio: int){
-
-}
-
-public boolean estaVivo(){
-    return false;
-    
-}
-
-}
-
-
-
