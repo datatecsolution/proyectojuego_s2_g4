@@ -1,19 +1,43 @@
 package net.perlasjp.juego;
 
+import java.util.Scanner;
+
 public class Combate {
-     private Jugador jugador;
-    
+
+    private Jugador jugador;
+
     private Enemigo enemigo;
 
+    public void iniciar(Jugador Jugador, Enemigo enemigo) {
+        Scanner scanner = new Scanner(System.in);
+        // System.out.printl("\niUn" + enemigo.getNombre() + "ha aparecido!");
 
-    public void iniciar(Enemigo enemigo,Jugador jugador){
+        while (jugador.estaVivo() && enemigo.estaVivo()) {
+            // System.out.println("\nTu salud: " + jugador.getSalud() + " | salud del
+            // enemigo: " + enemigo.getSalud());
+            System.out.print("¿Atacar (a) o Huir (h)? ");
+            String opcion = scanner.nextLine();
 
+            if (opcion.equalsIgnoreCase("a")) {
+                enemigo.recibirDanio(jugador.atacar());
+                if (enemigo.estaVivo()) {
+                    jugador.recibirDanio(enemigo.atacar());
+                } else {
+                    System.out.println(" ¡Derrotaste al " + enemigo.getNombre() + "!");
+
+                }
+            } else if (opcion.equalsIgnoreCase("h")) {
+                System.out.println("Has huido del combate");
+                return;
+            } else {
+                System.out.println("Opcion no valida.");
+            }
+
+        }
+
+        if (!jugador.estaVivo()) {
+            System.out.println("Has muerto en combate. Fin del juego.");
+            System.exit(0);
+        }
     }
-
-
-   
-    }
-
-
-
-    
+}
