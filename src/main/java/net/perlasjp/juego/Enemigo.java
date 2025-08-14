@@ -25,4 +25,19 @@ public class Enemigo {
 
     }
 
-}
+    public Enemigo(String n, int s) {
+
+        n = nombre;
+        s = salud;
+        fuerza = new Random().nextInt(5) + 5;
+
+    }
+
+    public String getNombre() {
+        return nombre;
+
+    }
+
+    public int getsalud() {
+        return salud;
+    }
