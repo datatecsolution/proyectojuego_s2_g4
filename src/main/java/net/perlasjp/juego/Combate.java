@@ -8,7 +8,10 @@ public class Combate {
 
     private Enemigo enemigo;
 
-    public void iniciar(Jugador Jugador, Enemigo enemigo) {
+    public void iniciar(Jugador j, Enemigo e) {
+
+        jugador = j;
+        enemigo = e;
         Scanner scanner = new Scanner(System.in);
         // System.out.printl("\niUn" + enemigo.getNombre() + "ha aparecido!");
 
@@ -23,7 +26,7 @@ public class Combate {
                 if (enemigo.estaVivo()) {
                     jugador.recibirDanio(enemigo.atacar());
                 } else {
-                    System.out.println(" ¡Derrotaste al " + enemigo.getNombre() + "!");
+                    // System.out.println(" ¡Derrotaste al " + enemigo.getNombre() + "!");
 
                 }
             } else if (opcion.equalsIgnoreCase("h")) {
