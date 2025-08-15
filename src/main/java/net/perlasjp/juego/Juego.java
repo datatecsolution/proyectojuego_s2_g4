@@ -15,7 +15,7 @@ public class Juego {
         System.out.println("¡Bienvenido al juego de aventura!");
         System.out.print("Ingrese tu nombre: ");
         String nombre = scanner.nextLine();
-        jugador = new Jugador();
+        //jugador = new Jugador(nombre);
 
        historia.introduccion();
        
@@ -36,7 +36,7 @@ public class Juego {
 
             case "2":
         
-                        //vamos a agregar otro metodo en jugador
+                        //jugador.mostrarEstado();
 
                     break;
             case "3":
