@@ -41,3 +41,4 @@ public class Enemigo {
     public int getsalud() {
         return salud;
     }
+}
