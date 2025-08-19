@@ -15,7 +15,7 @@ public class Juego {
         System.out.println("¡Bienvenido al juego de aventura!");
         System.out.print("Ingrese tu nombre: ");
         String nombre = scanner.nextLine();
-        //jugador = new Jugador(nombre);
+        jugador = new Jugador(nombre);
 
        historia.introduccion();
        
@@ -30,25 +30,18 @@ public class Juego {
 
         switch (opcion) {
             case "1":
-                Enemigo enemigo = new Enemigo();
-                combate.iniciar(enemigo , jugador);
-                break;
+                enemigo = new Enemigo("Goblin", 20);
+                combate.iniciar(jugador, enemigo );
+            break;
 
             case "2":
-        
-                        //jugador.mostrarEstado();
-
-                    break;
+                jugador.mostrarEstado();
+            break;
             case "3":
                 System.out.println("¡Gracias por jugar!");
                 return;
             default:
               System.out.println("Opcion no valida.");
-                    
-
-
-
-
 
         }
        }

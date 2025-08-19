@@ -1,5 +1,7 @@
 package net.perlasjp.juego;
 
+import java.util.Random;
+
 public class Enemigo {
     private String nombre;
     private int salud;
